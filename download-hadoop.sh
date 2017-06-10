@@ -8,7 +8,7 @@ if [ x$HADOOP_VERSION == 'x' ]
 	echo "HADOOP_VERSION: $HADOOP_VERSION"
 fi
 
-DOWNLAOD_PATH_PREFIX=./
+DOWNLAOD_PATH_PREFIX=/opt
 
 URL[0]="http://mirror.fibergrid.in/apache/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz"
 URL[1]="http://www-eu.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz"
@@ -23,7 +23,7 @@ do
 	if [ $? -eq 0 -a -s hadoop-$HADOOP_VERSION.tar.gz ]
 		then
 		tar xzf hadoop-$HADOOP_VERSION.tar.gz
-		rm -rf hadoop-$HADOOP_VERSION hadoop-$HADOOP_VERSION.tar.gz
+		rm -rf hadoop-$HADOOP_VERSION.tar.gz
 		break
 	fi
 done
